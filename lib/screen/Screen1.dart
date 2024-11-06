@@ -24,60 +24,62 @@ class _Screen1State extends State<Screen1> {
       },
       child: Scaffold(
         body:  SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(30),
-                width: width,
-                height: 250,
-                decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/background_signup.png"),fit: BoxFit.cover)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Spacer(),
-                    Image(image: AssetImage("assets/logo.png"),width: 42,),
-                    const SizedBox(height: 20),
-                    TextCustom(text: "Chào mừng bạn mới", color: Color(0xFFAE1730),fontSize: 22,fontWeight: FontWeight.w400,),
-                    const SizedBox(height: 20),
-                    TextCustom(text: "Đăng ký tài khoản", color: Color(0xFFAE1730),fontSize: 32,fontWeight: FontWeight.w600,)
-          
-                  ],
+          child: Padding(padding: const EdgeInsets.only(bottom: 16),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(30),
+                  width: width,
+                  height: 250,
+                  decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/background_signup.png"),fit: BoxFit.cover)),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Spacer(),
+                      Image(image: AssetImage("assets/logo.png"),width: 42,),
+                      SizedBox(height: 20),
+                      TextCustom(text: "Chào mừng bạn mới", color: Color(0xFFAE1730),fontSize: 22,fontWeight: FontWeight.w400,),
+                      SizedBox(height: 20),
+                      TextCustom(text: "Đăng ký tài khoản", color: Color(0xFFAE1730),fontSize: 32,fontWeight: FontWeight.w600,)
+
+                    ],
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20,),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  children: [
-                    InputCustom(hint: "Họ và tên",),
-                    InputCustom(hint: "Email của bạn",),
-                    InputCustom(hint: "Số điện thoại",),
-                    InputCustom(hint: "Mật khẩu",suffixIcon: IconButton(onPressed: () {
-                       setState(() {
-                         isVisible = !isVisible;
-                       });
-                    }, icon: isVisible ? const Icon(FontAwesomeIcons.eye,size: 24,color: Color(0xFFa8adae)) :  const Icon(FontAwesomeIcons.eyeSlash,size: 24,color: Color(0xFFa8adae),)),obscureText: isVisible,),
-                    InputCustom(hint: "Nhập lại mật khẩu",suffixIcon: IconButton(onPressed: () {
-                      setState(() {
-                        isVisible = !isVisible;
-                      });
-                    }, icon: isVisible ?  const Icon(FontAwesomeIcons.eye,size: 24,color: Color(0xFFa8adae)) : const Icon(FontAwesomeIcons.eyeSlash,size: 24,color: Color(0xFFa8adae),)),obscureText: isVisible,),
-                    const SizedBox(height: 30,),
-          
-                    Buttoncustom(text: "Đăng ký", onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => Screen2(),));
-                    },),
-                    const SizedBox(height: 10,),
-                    RichText(text: const TextSpan(children:
-                      [
-                        TextSpan(text: "Đã có tài khoản ? ",style: TextStyle(color: Color(0xFF555770),fontSize: 14,fontWeight: FontWeight.w500)),
-                        TextSpan(text: "Đăng nhập",style: TextStyle(color: Color(0xFFAE1730),fontSize: 14,fontWeight: FontWeight.w500))
-                      ]
-                    ))
-                  ],
-                ),
-              )
-            ],
+                const SizedBox(height: 20,),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      InputCustom(hint: "Họ và tên",),
+                      InputCustom(hint: "Email của bạn",),
+                      InputCustom(hint: "Số điện thoại",textInputType: const TextInputType.numberWithOptions(),),
+                      InputCustom(hint: "Mật khẩu",suffixIcon: IconButton(onPressed: () {
+                         setState(() {
+                           isVisible = !isVisible;
+                         });
+                      }, icon: isVisible ? const Icon(FontAwesomeIcons.eye,size: 24,color: Color(0xFFa8adae)) :  const Icon(FontAwesomeIcons.eyeSlash,size: 24,color: Color(0xFFa8adae),)),obscureText: isVisible,),
+                      InputCustom(hint: "Nhập lại mật khẩu",suffixIcon: IconButton(onPressed: () {
+                        setState(() {
+                          isVisible = !isVisible;
+                        });
+                      }, icon: isVisible ?  const Icon(FontAwesomeIcons.eye,size: 24,color: Color(0xFFa8adae)) : const Icon(FontAwesomeIcons.eyeSlash,size: 24,color: Color(0xFFa8adae),)),obscureText: isVisible,),
+                      const SizedBox(height: 30,),
+
+                      Buttoncustom(text: "Đăng ký", onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Screen2(),));
+                      },),
+                      const SizedBox(height: 10,),
+                      RichText(text: const TextSpan(children:
+                        [
+                          TextSpan(text: "Đã có tài khoản ? ",style: TextStyle(color: Color(0xFF555770),fontSize: 14,fontWeight: FontWeight.w500)),
+                          TextSpan(text: "Đăng nhập",style: TextStyle(color: Color(0xFFAE1730),fontSize: 14,fontWeight: FontWeight.w500))
+                        ]
+                      ))
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         )
       ),

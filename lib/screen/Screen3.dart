@@ -22,36 +22,40 @@ class _Screen3State extends State<Screen3> {
       },
       child: Scaffold(
           body:
-            Padding(padding: EdgeInsets.only(top: 30,left: 20,right: 20),
-              child: Column(
-                children: [
-                  Container(
-                    height: 39,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Positioned(left: 0,child: CircleIcon(icon: Icons.arrow_back)),
-                        Center(child: TextCustom(text: "Quên mật khẩu", color: Colors.black,fontWeight: FontWeight.w500,fontSize: 16,)),
-                      ],
+            Padding(padding: const EdgeInsets.only(top: 30,left: 20,right: 20),
+              child: Padding(padding: const EdgeInsets.only(bottom: 16),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 39,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Positioned(left: 0,child: InkWell(onTap: () {
+                            Navigator.pop(context);
+                          },child: CircleIcon(icon: Icons.arrow_back))),
+                          const Center(child: TextCustom(text: "Quên mật khẩu", color: Colors.black,fontWeight: FontWeight.w500,fontSize: 16,)),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 40,),
-                  const Image(image: AssetImage("assets/logo.png"),width: 42,height: 56.9,),
-                  RichText(text: const TextSpan(children: [
-                    TextSpan(text: "My",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 20)),
-                    TextSpan(text: "Chair",style: TextStyle(color: Color(0xFFAE1730),fontWeight: FontWeight.w600,fontSize: 20)),
+                    const SizedBox(height: 40,),
+                    const Image(image: AssetImage("assets/logo.png"),width: 42,height: 56.9,),
+                    RichText(text: const TextSpan(children: [
+                      TextSpan(text: "My",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 20)),
+                      TextSpan(text: "Chair",style: TextStyle(color: Color(0xFFAE1730),fontWeight: FontWeight.w600,fontSize: 20)),
 
-                  ]))
-                  ,const SizedBox(height: 40,),
+                    ]))
+                    ,const SizedBox(height: 40,),
 
-                  InputCustom(hint: "Nhập số điện thoại"),
+                    InputCustom(hint: "Nhập số điện thoại",textInputType: const TextInputType.numberWithOptions(),),
 
-                  Buttoncustom(text: "Lấy mã xác nhận", onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Screen4(),));
-                  },)
+                    Buttoncustom(text: "Lấy mã xác nhận", onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Screen4(),));
+                    },)
 
 
-                ],
+                  ],
+                ),
               ),
             ),
 

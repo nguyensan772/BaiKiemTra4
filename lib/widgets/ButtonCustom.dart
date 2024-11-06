@@ -2,9 +2,9 @@ import 'package:bai_kiem_tra_thuc_tap_4/widgets/textCustom.dart';
 import 'package:flutter/material.dart';
 
 class Buttoncustom extends StatelessWidget {
-  String text ;
-  Function() onTap ;
-  Buttoncustom({required this.text,required this.onTap});
+  final String text ;
+  final Function() onTap ;
+  const Buttoncustom({super.key, required this.text,required this.onTap});
 
   @override
   Widget build(BuildContext context) {

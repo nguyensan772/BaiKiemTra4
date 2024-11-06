@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TextCustom extends StatelessWidget {
-  String text;
-  double? fontSize ;
-  FontWeight? fontWeight;
-  TextAlign textAlign ;
-  Color color ;
-  TextOverflow? overflow;
+  final String text;
+  final double? fontSize ;
+  final FontWeight? fontWeight;
+  final TextAlign textAlign ;
+  final Color color ;
+  final TextOverflow? overflow;
 
-  TextCustom({super.key, required this.text, this.fontSize, this.fontWeight, this.textAlign = TextAlign.left,required this.color,this.overflow });
+  const TextCustom({super.key, required this.text, this.fontSize, this.fontWeight, this.textAlign = TextAlign.left,required this.color,this.overflow });
 
   @override
   Widget build(BuildContext context) {
