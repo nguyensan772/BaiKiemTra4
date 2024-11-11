@@ -1,5 +1,4 @@
 import 'package:bai_kiem_tra_thuc_tap_4/screen/Screen1.dart';
-import 'package:bai_kiem_tra_thuc_tap_4/screen/Screen5.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Screen1(),
+      home: const Screen1(),
     );
   }
 }

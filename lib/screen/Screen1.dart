@@ -3,6 +3,7 @@ import 'package:bai_kiem_tra_thuc_tap_4/widgets/ButtonCustom.dart';
 import 'package:bai_kiem_tra_thuc_tap_4/widgets/inputCustion.dart';
 import 'package:bai_kiem_tra_thuc_tap_4/widgets/textCustom.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Screen1 extends StatefulWidget {
@@ -50,9 +51,14 @@ class _Screen1State extends State<Screen1> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
-                      InputCustom(hint: "Họ và tên",),
-                      InputCustom(hint: "Email của bạn",),
-                      InputCustom(hint: "Số điện thoại",textInputType: const TextInputType.numberWithOptions(),),
+                      const InputCustom(hint: "Họ và tên",),
+                      const InputCustom(hint: "Email của bạn",),
+                      InputCustom(hint: "Số điện thoại",
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(RegExp("[0-9]"))
+                        ],
+
+                        textInputType: const TextInputType.numberWithOptions(),),
                       InputCustom(hint: "Mật khẩu",suffixIcon: IconButton(onPressed: () {
                          setState(() {
                            isVisible = !isVisible;

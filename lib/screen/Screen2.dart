@@ -55,7 +55,7 @@ class _Screen2State extends State<Screen2> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
-                        InputCustom(hint: "Họ và tên",),
+                        const InputCustom(hint: "Họ và tên",),
 
                         InputCustom(hint: "Mật khẩu",suffixIcon: IconButton(onPressed: () {
                           setState(() {
@@ -82,7 +82,7 @@ class _Screen2State extends State<Screen2> {
                         const SizedBox(height: 30,),
 
                         Buttoncustom(text: "Đăng nhập", onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Screen3(),));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Screen3(),));
                         },),
                         const SizedBox(height: 5,),
                         const TextCustom(text: "Hoặc", color: Color(0xFF555770)),
@@ -92,7 +92,7 @@ class _Screen2State extends State<Screen2> {
 
                           child: Container(
                             width:  width,
-                            decoration: BoxDecoration(color: Color(0xFFF2DEDE),borderRadius: BorderRadius.circular(16)),
+                            decoration: BoxDecoration(color: const Color(0xFFF2DEDE),borderRadius: BorderRadius.circular(16)),
                             child: const Center(child: Padding(padding: EdgeInsets.all(20),child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

@@ -36,7 +36,7 @@ class _Screen4State extends State<Screen4> {
                     children: [
                       Positioned(left: 0,child: InkWell(onTap: () {
                         Navigator.pop(context);
-                      },child: CircleIcon(icon: Icons.arrow_back))),
+                      },child: const CircleIcon(icon: Icons.arrow_back))),
                       const Center(child: TextCustom(text: "Xác thực OTP", color: Colors.black,fontWeight: FontWeight.w500,fontSize: 16,)),
                     ],
                   ),
